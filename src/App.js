@@ -4,7 +4,6 @@ import React, { createRef, useEffect } from 'react';
 import mapboxgl from "mapbox-gl";
 import streets from './streets.json';
 import pumps from './pumps.json';
-import Legends from './Legends';
 //import Swatches from './Swatches';
 import DeathDays from './DateDeath';
 import PieChart from './PieChart';
