@@ -2,7 +2,7 @@ import React from 'react';
 import CanvasJSReact from './canvasjs.react';
 import deathDays from './deathDays.json';
 
-export default function DeathDays() {
+export default function DeathDays({setSelectedValue}) {
 
     const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
@@ -18,12 +18,12 @@ export default function DeathDays() {
 
         let rangeDataFrom = data.findIndex((item)=> item.label === rangeValue.from);
         let rangeDataTo = data.findIndex((item)=> item.label === rangeValue.to);
-        setDropdownRange({from:data,to:data.slice(rangeDataFrom,data.length+1)});
+        const selected = {from:data,to:data.slice(rangeDataFrom,data.length+2)}
+        setDropdownRange(selected);
+        setSelectedValue(rangeValue);
         setDropdownData(data.slice(rangeDataFrom,rangeDataTo+1))
 
     },[rangeValue])
-
-console.log(dropdownRange,'dropdownRangedropdownRange')
 
     const options = {
         animationEnabled: true,
